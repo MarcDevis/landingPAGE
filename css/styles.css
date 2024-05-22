@@ -17,7 +17,7 @@ body{
 body{
     font-family: "Roboto";
     font-size: var(--tamaño-fuente); /*rem = 16px*/
-    background-image:linear-gradient(to top,rgb(164, 244, 220) 0%, rgb(105, 215, 131) 100%)
+    background-image:linear-gradient(to top,rgb(249, 13, 13) 0%, rgb(20, 95, 255) 100%)
 }
 h1{
     font-size: 3.8rem;
@@ -90,7 +90,7 @@ h2{
 }
 
 .titulo{
-    color: rgb(194, 122, 80);
+    color: rgb(0, 255, 81);
     font-size: 3.8rem;
     text-align: center;
 }
@@ -210,7 +210,7 @@ p{
 }
 
 .formulario{
-    background-color: rgb(72, 255, 215);
+    background-color: rgb(231, 245, 190);
     width: min(60rem,90%);
     margin: 0 auto;
     padding: 2rem;
@@ -222,16 +222,17 @@ p{
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: rem;
+    margin-bottom: 2rem;
     color: var(--primario);
 }
 
 .campo{
     margin-bottom: 1rem;
+    color: black;
 }
 
 .campo label{
-    color: var(--secundario);
+    color: black;
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
@@ -241,7 +242,8 @@ p{
     width: 100%;
     border: none;
     padding: 1rem;
-    border-radius: o.5rem;
+    border-radius: 0.5rem;
+    color: black;
 
 }
 

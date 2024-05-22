@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: rgb(255, 156, 99);
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+nav button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background-color: #777;
+}
+
+main {
+    padding: 2rem;
+}
+
+.title h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.player, .team {
+    text-align: center;
+    width: 150px;
+    
+}
+
+.player img, .team img {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.team {
+    margin-top: 2rem;
+}
+
+.player-section, .comparison-section, .statistics-section {
+    display: none;
+    padding: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+th {
+    background-color: #c54b4b;
+}
+
+.comparison-section .comparison-tables {
+    display: flex;
+    justify-content: space-around;
+}
+
+.statistics {
+    text-align: center;
+    font-size: 1.2rem;
+}
