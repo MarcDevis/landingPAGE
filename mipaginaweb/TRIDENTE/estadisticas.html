@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - El Tridente</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title" onclick="window.location.href='index.html'">El Tridente</h1>
+    </header>
+    <main>
+        <h2>Estadísticas Comparativas</h2>
+        <div>
+            <h3>Minutos Jugados</h3>
+            <canvas id="minutosChart"></canvas>
+        </div>
+        <div>
+            <h3>Goles</h3>
+            <canvas id="golesChart"></canvas>
+        </div>
+        <div>
+            <h3>Tarjetas</h3>
+            <canvas id="tarjetasChart"></canvas>
+        </div>
+        <div>
+            <h3>Titularidad</h3>
+            <canvas id="titularChart"></canvas>
+        </div>
+        <div>
+            <h3>Convocados</h3>
+            <canvas id="convocadoChart"></canvas>
+        </div>
+    </main>
+    <footer>
+        <button onclick="window.location.href='index.html'">Volver al Home</button>
+    </footer>
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const jugadoresData = [jugadores.cesar, jugadores.xavi, jugadores.devis];
+            const nombres = jugadoresData.map(j => j.nombre);
+            const totalMinutos = jugadoresData.map(j => j.datos.reduce((acc, dato) => acc + dato.minutos, 0));
+            const totalGoles = jugadoresData.map(j => j.datos.reduce((acc, dato) => acc + dato.goles, 0));
+            const totalTarjetas = jugadoresData.map(j => j.datos.reduce((acc, dato) => acc + dato.tarjetas, 0));
+            const totalTitular = jugadoresData.map(j => j.datos.reduce((acc, dato) => acc + (dato.titular ? 1 : 0), 0));
+            const totalConvocado = jugadoresData.map(j => j.datos.reduce((acc, dato) => acc + (dato.convocado ? 1 : 0), 0));
+
+            new Chart(document.getElementById('minutosChart'), {
+                type: 'bar',
+                data: {
+                    labels: nombres,
+                    datasets: [{
+                        label: 'Minutos Jugados',
+                        data: totalMinutos,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('golesChart'), {
+                type: 'bar',
+                data: {
+                    labels: nombres,
+                    datasets: [{
+                        label: 'Goles',
+                        data: totalGoles,
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('tarjetasChart'), {
+                type: 'bar',
+                data: {
+                    labels: nombres,
+                    datasets: [{
+                        label: 'Tarjetas',
+                        data: totalTarjetas,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('titularChart'), {
+                type: 'bar',
+                data: {
+                    labels: nombres,
+                    datasets: [{
+                        label: 'Titularidad',
+                        data: totalTitular,
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('convocadoChart'), {
+                type: 'bar',
+                data: {
+                    labels: nombres,
+                    datasets: [{
+                        label: 'Convocados',
+                        data: totalConvocado,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

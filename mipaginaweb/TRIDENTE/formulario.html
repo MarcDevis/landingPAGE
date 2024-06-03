@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Datos - El Tridente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title" onclick="window.location.href='index.html'">El Tridente</h1>
+    </header>
+    <main>
+        <h2>Actualizar Datos</h2>
+        <form id="datos-form" onsubmit="actualizarDatos(event)">
+            <div class="form-group">
+                <label for="jugador">Jugador:</label>
+                <select id="jugador" name="jugador" required>
+                    <option value="cesar">César</option>
+                    <option value="xavi">Xavi</option>
+                    <option value="devis">Devis</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="jornada">Jornada:</label>
+                <input type="number" id="jornada" name="jornada" min="1" max="34" required>
+            </div>
+            <div class="form-group">
+                <label for="minutos">Minutos Jugados:</label>
+                <input type="number" id="minutos" name="minutos" required>
+            </div>
+            <div class="form-group">
+                <label for="goles">Goles:</label>
+                <input type="number" id="goles" name="goles" required>
+            </div>
+            <div class="form-group">
+                <label for="tarjetas">Tarjetas:</label>
+                <input type="number" id="tarjetas" name="tarjetas" required>
+            </div>
+            <div class="form-group">
+                <label for="titular">Titular:</label>
+                <select id="titular" name="titular" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="convocado">Convocado:</label>
+                <select id="convocado" name="convocado" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <button type="submit">Actualizar</button>
+        </form>
+        <button onclick="window.location.href='index.html'">Volver al Home</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 El Tridente</p>
+    </footer>
+
+    <script>
+        function actualizarDatos(event) {
+            event.preventDefault();
+            const jugador = document.getElementById('jugador').value;
+            const jornada = document.getElementById('jornada').value;
+            const minutos = document.getElementById('minutos').value;
+            const goles = document.getElementById('goles').value;
+            const tarjetas = document.getElementById('tarjetas').value;
+            const titular = document.getElementById('titular').value;
+            const convocado = document.getElementById('convocado').value;
+
+            // Guardar los datos en localStorage o enviarlos a un servidor
+            // Aquí guardamos en localStorage como ejemplo
+            const datos = {
+                jornada,
+                minutos,
+                goles,
+                tarjetas,
+                titular,
+                convocado
+            };
+
+            let jugadorDatos = JSON.parse(localStorage.getItem(jugador)) || [];
+            jugadorDatos.push(datos);
+            localStorage.setItem(jugador, JSON.stringify(jugadorDatos));
+
+            alert('Datos actualizados correctamente');
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y Estilos CSS</title>
+    <style>
+        /* Estilos para el formulario */
+        .form-group {
+            margin-bottom: 1em;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 0.5em;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <div class="form-group">
+            <label for="jornada">Jornada:</label>
+            <input type="number" id="jornada" name="jornada" min="1" required>
+        </div>
+        <div class="form-group">
+            <label for="minutos">Minutos Jugados:</label>
+            <input type="number" id="minutos" name="minutos" min="0" max="90" required>
+        </div>
+        <div class="form-group">
+            <label for="goles">Goles:</label>
+            <input type="number" id="goles" name="goles" min="0">
+        </div>
+        <div class="form-group">
+            <label for="tarjetas">Tarjetas:</label>
+            <select id="tarjetas" name="tarjetas" required>
+                <option value="">Seleccione</option>
+                <option value="1">1 Amarilla</option>
+                <option value="2">2 Amarillas</option>
+                <option value="3">1 Roja</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="titular">Titular:</label>
+            <input type="checkbox" id="titular" name="titular">
+        </div>
+        <div class="form-group">
+            <label for="convocado">Convocado:</label>
+            <input type="checkbox" id="convocado" name="convocado">
+        </div>
+        <button type="submit">Agregar Datos</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaciones - El Tridente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title" onclick="window.location.href='index.html'">El Tridente</h1>
+    </header>
+    <main>
+        <h2>Comparaciones</h2>
+        <div class="comparacion">
+            <table id="comparacion-cesar">
+                <thead>
+                    <tr>
+                        <th>Jornada</th>
+                        <th>Minutos Jugados</th>
+                        <th>Goles</th>
+                        <th>Tarjetas</th>
+                        <th>Titular</th>
+                        <th>Convocado</th>
+                    </tr>
+                </thead>
+                <tbody class="cesar"></tbody>
+            </table>
+            <table id="comparacion-xavi">
+                <thead>
+                    <tr>
+                        <th>Jornada</th>
+                        <th>Minutos Jugados</th>
+                        <th>Goles</th>
+                        <th>Tarjetas</th>
+                        <th>Titular</th>
+                        <th>Convocado</th>
+                    </tr>
+                </thead>
+                <tbody class="xavi"></tbody>
+            </table>
+            <table id="comparacion-devis">
+                <thead>
+                    <tr>
+                        <th>Jornada</th>
+                        <th>Minutos Jugados</th>
+                        <th>Goles</th>
+                        <th>Tarjetas</th>
+                        <th>Titular</th>
+                        <th>Convocado</th>
+                    </tr>
+                </thead>
+                <tbody class="devis"></tbody>
+            </table>
+        </div>
+        <button onclick="window.location.href='index.html'">Volver al Home</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 El Tridente</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cargarDatos = (jugador, clase) => {
+                const datos = JSON.parse(localStorage.getItem(jugador)) || [];
+                const tbody = document.querySelector(`.${clase}`);
+                datos.forEach(dato => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${dato.jornada}</td>
+                        <td>${dato.minutos}</td>
+                        <td>${dato.goles}</td>
+                        <td>${dato.tarjetas}</td>
+                        <td>${dato.titular}</td>
+                        <td>${dato.convocado}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            };
+
+            cargarDatos('cesar', 'cesar');
+            cargarDatos('xavi', 'xavi');
+            cargarDatos('devis', 'devis');
+        });
+    </script>
+</body>
+</html>

@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenidos a DEVISOVICH</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-    <header>
-        <h1 class="titulo">DEVISOVICH <span>formación</span></h1>
-    </header>
-    <div class="bg-secundario">
-        <nav class="navegacion-principal contenedor">
-            <a href="index.html">Home</a> 
-            <a href="tutoriales.html">Tutoriales</a> 
-            <a href="cursos.html">Cursos</a>
-            <a href="contacto.html">Contacto</a> 
-            </a>
-        </nav>
-    </div>
+<?php
+    include 'db.php';
+    include 'header.php';
+?>
     <section class="hero">
         <div class="contenido-hero">
             <h2>formación onnline a tu ritmo y fácil</h2>
@@ -73,47 +51,7 @@
                 <p>Suspendisse dignissim velit quis eros sodales viverra.</p>
             </section>
         </div>
-        <section>
-            <h2>Contacto</h2>
-            <form class="formulario" action="">
-                <fieldset>
-                    <legend>Contáctame enviando tus datos</legend>
-                    <div class=".contenedor-campos">
-                        <div class="campo">
-                            </div>
-                                <label for="Nombre">Nombre</label>
-                                <input class="input-text"  type="text" name="nombre" placeholder="Tu nombre">
-                            </div>
-                        </div>
-                        <div class="campo">
-                            </div>
-                                <label for="">Telefono</label>
-                                <input class="input-text"  type="tel" name="Telefono" id="" placeholder="Tu Telefono">
-                            <div>
-                            <div>
-                            <div class="campo">
-                                <div>
-                                <label for="">Correo</label>
-                                <input class="input-text"  type="email" name="Correo" id="" placeholder="Tu correo">
-                            </div>
-                    </div>
-                    <div class="campo">
-                        <div>
-                            <label for="">Mensaje</label>
-                            <textarea name="" id="" cols="112" rows="10"></textarea  >
-                            <div>
-                        <div>
-                        <div>
-                            <input class="input-text"  class="boton" type="submit" value="Enviar">
-                        </div>
-                    </div>
-                </fieldset>
-
-            </form>
-        </section>
     </main>
-    <footer>
-        <p>Todos los derechos reservados</p>
-    </footer>
-</body>
-</html>
+    <?php
+        include 'footer.php';
+    ?>

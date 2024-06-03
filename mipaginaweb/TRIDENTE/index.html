@@ -8,306 +8,37 @@
 </head>
 <body>
     <header>
-        <h1>El Tridente</h1>
-        <nav>
-            <button onclick="showSection('comparaciones')">Comparaciones</button>
-            <button onclick="showSection('estadisticas')">Estadísticas</button>
-        </nav>
+        <h1 id="title" onclick="window.location.href='index.html'">El Tridente</h1>
     </header>
     <main>
-        <section class="home">
-            <div class="title">
-                <h2>El Tridente</h2>
+        <div class="jugadores">
+            <div class="jugador">
+                <a href="cesar.html">
+                    <img src="/img./cesar.jpg" alt="César" class="jugador-img">
+                    <h2>César</h2>
+                </a>
             </div>
-            <div class="players">
-                <div class="player">
-                    <h3>César</h3>
-                    <img src="/img/cesar.jpg" alt="César" onclick="showPlayer('cesar')">
-                </div>
-                <div class="player">
-                    <h3>Xavi</h3>
-                    <img src="/img/xavi.jpg" alt="Xavi" onclick="showPlayer('xavi')">
-                </div>
-                <div class="player">
-                    <h3>Devis</h3>
-                    <img src="/img/devis.jpg" alt="Devis" onclick="showPlayer('devis')">
-                </div>
+            <div class="jugador">
+                <a href="xavi.html">
+                    <img src="/img./xavi.jpg" alt="Xavi" class="jugador-img">
+                    <h2>Xavi</h2>
+                </a>
             </div>
-            <div class="team">
-                <h3>Equipo</h3>
-                <img src="escudo.jpg" alt="Escudo del equipo">
+            <div class="jugador">
+                <a href="devis.html">
+                    <img src="/img./devis.jpg" alt="Devis" class="jugador-img">
+                    <h2>Devis</h2>
+                </a>
             </div>
-        </section>
-
-        <section id="cesar" class="player-section">
-            <h2>César</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Jornada</th>
-                        <th>Convocado</th>
-                        <th>No Convocados</th>
-                        <th>Tarjetas</th>
-                        <th>Goles</th>
-                        <th>Minutos Jugados</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí van las filas de datos -->
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Total</th>
-                        <td id="total-convocados-cesar"></td>
-                        <td id="total-no-convocados-cesar"></td>
-                        <td id="total-tarjetas-cesar"></td>
-                        <td id="total-goles-cesar"></td>
-                        <td id="total-minutos-cesar"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
-
-        <section id="xavi" class="player-section">
-            <h2>Xavi</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Jornada</th>
-                        <th>Convocado</th>
-                        <th>No Convocados</th>
-                        <th>Tarjetas</th>
-                        <th>Goles</th>
-                        <th>Minutos Jugados</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí van las filas de datos -->
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Total</th>
-                        <td id="total-convocados-xavi"></td>
-                        <td id="total-no-convocados-xavi"></td>
-                        <td id="total-tarjetas-xavi"></td>
-                        <td id="total-goles-xavi"></td>
-                        <td id="total-minutos-xavi"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
-
-        <section id="devis" class="player-section">
-            <h2>Devis</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Jornada</th>
-                        <th>Convocado</th>
-                        <th>No Convocados</th>
-                        <th>Tarjetas</th>
-                        <th>Goles</th>
-                        <th>Minutos Jugados</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí van las filas de datos -->
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Total</th>
-                        <td id="total-convocados-devis"></td>
-                        <td id="total-no-convocados-devis"></td>
-                        <td id="total-tarjetas-devis"></td>
-                        <td id="total-goles-devis"></td>
-                        <td id="total-minutos-devis"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
-
-        <section id="comparaciones" class="comparison-section">
-            <h2>Comparaciones</h2>
-            <div class="comparison-tables">
-                <table id="comparison-cesar">
-                    <thead>
-                        <tr>
-                            <th>Jornada</th>
-                            <th>Convocado</th>
-                            <th>No Convocados</th>
-                            <th>Tarjetas</th>
-                            <th>Goles</th>
-                            <th>Minutos Jugados</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí van las filas de datos -->
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Total</th>
-                            <td id="total-convocados-cesar-comp"></td>
-                            <td id="total-no-convocados-cesar-comp"></td>
-                            <td id="total-tarjetas-cesar-comp"></td>
-                            <td id="total-goles-cesar-comp"></td>
-                            <td id="total-minutos-cesar-comp"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-
-                <table id="comparison-xavi">
-                    <thead>
-                        <tr>
-                            <th>Jornada</th>
-                            <th>Convocado</th>
-                            <th>No Convocados</th>
-                            <th>Tarjetas</th>
-                            <th>Goles</th>
-                            <th>Minutos Jugados</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí van las filas de datos -->
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Total</th>
-                            <td id="total-convocados-xavi-comp"></td>
-                            <td id="total-no-convocados-xavi-comp"></td>
-                            <td id="total-tarjetas-xavi-comp"></td>
-                            <td id="total-goles-xavi-comp"></td>
-                            <td id="total-minutos-xavi-comp"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-
-                <table id="comparison-devis">
-                    <thead>
-                        <tr>
-                            <th>Jornada</th>
-                            <th>Convocado</th>
-                            <th>No Convocados</th>
-                            <th>Tarjetas</th>
-                            <th>Goles</th>
-                            <th>Minutos Jugados</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí van las filas de datos -->
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Total</th>
-                            <td id="total-convocados-devis-comp"></td>
-                            <td id="total-no-convocados-devis-comp"></td>
-                            <td id="total-tarjetas-devis-comp"></td>
-                            <td id="total-goles-devis-comp"></td>
-                            <td id="total-minutos-devis-comp"></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </section>
-
-        <section id="estadisticas" class="statistics-section">
-            <h2>Estadísticas</h2>
-            <div class="statistics">
-                <p id="most-minutes">Jugador con más minutos jugados: </p>
-                <p id="most-goals">Jugador con más goles: </p>
-                <p id="most-cards">Jugador con más tarjetas: </p>
-            </div>
-        </section>
+        </div>
+        <button onclick="window.location.href='estadisticas.html'">Estadísticas</button>
+        <button onclick="window.location.href='nuevas_estadisticas.html'">Promedios</button>
+        <button onclick="window.location.href='formulario.html'">Actualizar Datos</button>
     </main>
-    <script>
-        function showPlayer(playerId) {
-            document.querySelectorAll('.player-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.querySelector(`#${playerId}`).style.display = 'block';
-        }
-
-        function showSection(sectionId) {
-            document.querySelectorAll('main > section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.querySelector(`#${sectionId}`).style.display = 'block';
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.player-section, .comparison-section, .statistics-section').forEach(section => {
-                section.style.display = 'none';
-            });
-
-            calculateTotals('cesar');
-            calculateTotals('xavi');
-            calculateTotals('devis');
-
-            comparePlayers();
-            showStatistics();
-        });
-
-        function calculateTotals(player) {
-            let totalConvocados = 0;
-            let totalNoConvocados = 0;
-            let totalTarjetas = 0;
-            let totalGoles = 0;
-            let totalMinutos = 0;
-
-            const rows = document.querySelectorAll(`#${player} tbody tr`);
-
-            rows.forEach(row => {
-                totalConvocados += parseInt(row.cells[1].textContent) || 0;
-                totalNoConvocados += parseInt(row.cells[2].textContent) || 0;
-                totalTarjetas += parseInt(row.cells[3].textContent) || 0;
-                totalGoles += parseInt(row.cells[4].textContent) || 0;
-                totalMinutos += parseInt(row.cells[5].textContent) || 0;
-            });
-
-            document.getElementById(`total-convocados-${player}`).textContent = totalConvocados;
-            document.getElementById(`total-no-convocados-${player}`).textContent = totalNoConvocados;
-            document.getElementById(`total-tarjetas-${player}`).textContent = totalTarjetas;
-            document.getElementById(`total-goles-${player}`).textContent = totalGoles;
-            document.getElementById(`total-minutos-${player}`).textContent = totalMinutos;
-
-            // Actualizar comparación
-            document.getElementById(`total-convocados-${player}-comp`).textContent = totalConvocados;
-            document.getElementById(`total-no-convocados-${player}-comp`).textContent = totalNoConvocados;
-            document.getElementById(`total-tarjetas-${player}-comp`).textContent = totalTarjetas;
-            document.getElementById(`total-goles-${player}-comp`).textContent = totalGoles;
-            document.getElementById(`total-minutos-${player}-comp`).textContent = totalMinutos;
-        }
-
-        function comparePlayers() {
-            // Aquí puedes añadir cualquier lógica adicional que necesites para las comparaciones.
-        }
-
-        function showStatistics() {
-            let mostMinutes = { name: '', value: 0 };
-            let mostGoals = { name: '', value: 0 };
-            let mostCards = { name: '', value: 0 };
-
-            ['cesar', 'xavi', 'devis'].forEach(player => {
-                const totalMinutes = parseInt(document.getElementById(`total-minutos-${player}`).textContent) || 0;
-                const totalGoals = parseInt(document.getElementById(`total-goles-${player}`).textContent) || 0;
-                const totalCards = parseInt(document.getElementById(`total-tarjetas-${player}`).textContent) || 0;
-
-                if (totalMinutes > mostMinutes.value) {
-                    mostMinutes = { name: player, value: totalMinutes };
-                }
-
-                if (totalGoals > mostGoals.value) {
-                    mostGoals = { name: player, value: totalGoals };
-                }
-
-                if (totalCards > mostCards.value) {
-                    mostCards = { name: player, value: totalCards };
-                }
-            });
-
-            document.getElementById('most-minutes').textContent = `Jugador con más minutos jugados: ${mostMinutes.name} (${mostMinutes.value} minutos)`;
-            document.getElementById('most-goals').textContent = `Jugador con más goles: ${mostGoals.name} (${mostGoals.value} goles)`;
-            document.getElementById('most-cards').textContent = `Jugador con más tarjetas: ${mostCards.name} (${mostCards.value} tarjetas)`;
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 El Tridente</p>
+    </footer>
 </body>
 </html>
+
+

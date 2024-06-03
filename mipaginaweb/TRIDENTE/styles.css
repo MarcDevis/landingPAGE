@@ -1,106 +1,205 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f0f0f0; /* Color de fondo suave */
 }
 
-header {
-    background-color: #333;
-    color: rgb(255, 156, 99);
-    padding: 1rem;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-nav {
-    margin: 1rem 0;
-    text-align: center;
-}
-
-nav button {
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    background-color: #555;
+header, footer {
+    width: 100%;
+    background-color: #333; /* Color de fondo para el encabezado y pie de página */
     color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 1em 0;
+    text-align: center;
 }
 
-nav button:hover {
-    background-color: #777;
+#title {
+    cursor: pointer;
 }
 
 main {
-    padding: 2rem;
-}
-
-.title h2 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2em auto;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
 }
 
-.home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-}
-
-.players {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.player, .team {
-    text-align: center;
-    width: 150px;
-    
-}
-
-.player img, .team img {
-    width: 150px;
-    height: 150px;
+/* Estilos para los botones */
+button {
+    padding: 0.5em 1em;
+    margin: 1em;
     cursor: pointer;
+    background-color: #4CAF50; /* Color de fondo para los botones */
+    border: none;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-.team {
-    margin-top: 2rem;
+button:hover {
+    background-color: #45a049; /* Cambio de color al pasar el mouse sobre los botones */
 }
 
-.player-section, .comparison-section, .statistics-section {
-    display: none;
-    padding: 2rem;
+/* Estilos para las fotos de los jugadores */
+.jugador-img {
+    width: 150px; /* Tamaño ajustado para las fotos de los jugadores */
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #fff; /* Borde blanco para resaltar las fotos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave alrededor de las fotos */
 }
 
+/* Estilos para la sección de jugadores */
+.jugadores {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.jugador {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.jugador:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse sobre los jugadores */
+}
+
+/* Estilos para el contenido principal */
+.comparacion table,
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 2rem;
+    margin: 1em 0;
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 0.5rem;
+    padding: 0.5em;
     text-align: center;
 }
 
 th {
-    background-color: #c54b4b;
+    background-color: #4CAF50; /* Color de fondo para las celdas de encabezado */
+    color: white;
 }
 
-.comparison-section .comparison-tables {
+/* Estilos para las filas alternas */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color suave para las filas pares */
+}
+
+/* Estilos para las filas de cada jugador en la tabla de comparaciones */
+.comparacion tbody .cesar {
+    background-color: #FFE5E5; /* Color suave para las filas de César */
+}
+
+.comparacion tbody .xavi {
+    background-color: #E5E5FF; /* Color suave para las filas de Xavi */
+}
+
+.comparacion tbody .devis {
+    background-color: #E5FFE5; /* Color suave para las filas de Devis */
+}
+
+/* Estilos para las filas de las tablas de jugadores */
+tbody tr:nth-child(odd) {
+    background-color: #D9E5FF; /* Color suave para las filas impares */
+}
+
+/* Estilos para las nuevas estadísticas */
+.stats {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.statistics {
+.stats .jugador {
+    width: 30%;
+    margin: 1em;
+    padding: 1em;
+    background-color: #f9f9f9; /* Color de fondo para las tablas */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de las tablas */
+}
+
+.stats table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats th, .stats td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.stats th {
+    background-color: #4CAF50; /* Color de fondo para las celdas de encabezado */
+    color: white;
+}
+
+.stats td {
+    background-color: #f2f2f2; /* Color de fondo para las celdas de datos */
+    color: #333; /* Color del texto en las celdas de datos */
+}
+
+/* Estilos para las tablas en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jugador {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .jugador table {
+        width: 100%;
+    }
+
+    .jugador th, .jugador td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Estilos para el formulario */
+.form-group {
+    margin: 1em 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #4CAF50; /* Color de fondo para el botón de envío */
+    border: none;
+    color: white;
+    padding: 1em;
     text-align: center;
-    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #45a049; /* Cambio de color al pasar el mouse sobre el botón de envío */
 }
