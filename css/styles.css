@@ -190,7 +190,7 @@ p{
 .contenido h3{
     font-weight: normal;
     color: var(--primario);
-
+a
 }
 
 .contenido p{
@@ -256,3 +256,25 @@ p{
     justify-content: center;
     align-items: center;
 }
+
+.success{
+    background-color: green;
+    color: white;
+}
+
+.error{
+    background-color: red;
+    color: white;
+    border-radius: 1rem;
+}
+
+.mensaje{
+    width: 50%;
+    text-align: center;
+    border-radius: 1rem;
+    border: 3rem solid blue;
+    margin-top: 3rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
