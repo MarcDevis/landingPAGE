@@ -10,10 +10,36 @@ $result = $conn->query($sql);
 <h1>leer mensajes</h1>
 
 <div class="contenedor listado">
-    <?php
-    while($row = $result->fetch_assoc()){
+    <div class="fila cabecera">
+        <div class="campoCabecera">
+            Id
+        </div>
+        <div class="campoCabecera">
+            Nombre
+        </div>
+        <div class="campoCabecera">
+            Telefono
+        </div>
+        <div class="campoCabecera">
+            Correo
+        </div>
+        <div class="campoCabecera">
+            Mensaje
+        </div>
+
+</div>
+<?php
+$num = 0;
+while ($row = $result->fetch_assoc()) {
+    $num++;
+    $paridad ="impar";
+    if ($num % 2 == 0) {
+        $paridad ="par";
+    }
+    // PARIDAD ME INDICA SI LA FILA ES PAR O IMPAR
     ?>
-    <div class="fila">
+    <div class="fila <?=$paridad?>">
+
         <div class="campo"><?php echo $row['id']; ?></div>
         <div class="campo"><?php echo $row['nombre']; ?></div>
         <div class="campo"><?php echo $row['telefono']; ?></div>

@@ -4,7 +4,7 @@
     --gris:rgb(109, 109, 109);
     --primario:#3e0eff;
     --secundario:#8b3a45;
-    --tamaño-fuente: 16px:
+    --tamaÃ±o-fuente: 16px:
 }
 
 html{
@@ -16,7 +16,7 @@ body{
 
 body{
     font-family: "Roboto";
-    font-size: var(--tamaño-fuente); /*rem = 16px*/
+    font-size: var(--tamaÃ±o-fuente); /*rem = 16px*/
     background-image:linear-gradient(to top,rgb(249, 13, 13) 0%, rgb(20, 95, 255) 100%)
 }
 h1{
@@ -278,3 +278,35 @@ a
     text-transform: uppercase;
 }
 
+
+.cabecera{
+    padding-bottom: 1rem;
+}
+
+.campoCabecera{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem 0;
+    background-color: yellowgreen;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid var(--oscuro);
+}
+.fila{
+    display: grid;
+    grid-template-columns: .5fr 2fr 1fr 2fr 3fr;
+}
+
+.campo{
+    font-size: 2rem;
+    margin: 0 2 rem;
+
+}
+
+.fila.impar{
+    background-color: rgb(219, 228, 243)
+}
+
+.fila.par{
+    background-color: rgb(240, 240, 216)
+}
