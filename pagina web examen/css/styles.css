@@ -3,7 +3,7 @@
     --oscuro:#03053a;
     --gris:rgb(109, 109, 109);
     --primario:#3e0eff;
-    --secundario:#8b3a45;
+    --secundario:#97b1db;
     --tamaÃ±o-fuente: 16px:
 }
 
@@ -17,7 +17,7 @@ body{
 body{
     font-family: "Roboto";
     font-size: var(--tamaÃ±o-fuente); /*rem = 16px*/
-    background-image:linear-gradient(to top,rgb(249, 13, 13) 0%, rgb(20, 95, 255) 100%)
+    background-image:linear-gradient(to top,rgb(146, 219, 200) 0%, rgb(20, 95, 255) 100%)
 }
 h1{
     font-size: 3.8rem;
@@ -129,7 +129,7 @@ p{
     padding-right: 20px;
     padding-left: 40px;
     padding-bottom: 10px;
-   
+
 }
 
 .navegacion-principal a:hover{
@@ -138,7 +138,7 @@ p{
 }
 
 .hero{
-    background-image: url('/img/fondo-pagina-web.jpg');
+    background-image: url('../img/fondo-pagina-web.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 45rem;
@@ -146,7 +146,7 @@ p{
 }
 
 .contenido-hero{
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     position: absolute;
     top:  0px;
@@ -214,7 +214,12 @@ a
     width: min(60rem,90%);
     margin: 0 auto;
     padding: 2rem;
-    border-radius: 2rem;
+    border-radius: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -224,11 +229,16 @@ a
     font-weight: bold;
     margin-bottom: 2rem;
     color: var(--primario);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .campo{
-    margin-bottom: 1rem;
-    color: black;
+    margin-bottom: 1.5rem;
+    width: 50%;
+    
 }
 
 .campo label{
@@ -240,10 +250,12 @@ a
 
 .input-text{
     width: 100%;
-    border: none;
+    border: 1px solid var(--secundario);
     padding: 1rem;
     border-radius: 0.5rem;
+    font-size: 1rem;
     color: black;
+    box-sizing: border-box;
 
 }
 
@@ -281,6 +293,7 @@ a
 
 .cabecera{
     padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
 .campoCabecera{
@@ -291,16 +304,32 @@ a
     text-align: center;
     text-transform: uppercase;
     border: 1px solid var(--oscuro);
+    color: var(--primario);
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    color: black;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+
 }
 .fila{
     display: grid;
-    grid-template-columns: .5fr 2fr 1fr 2fr 3fr;
-}
-
-.campo{
-    font-size: 2rem;
-    margin: 0 2 rem;
-
+    grid-template-columns: .1fr 1fr 1fr 1fr 1fr 1fr;
+    
 }
 
 .fila.impar{
@@ -309,4 +338,197 @@ a
 
 .fila.par{
     background-color: rgb(240, 240, 216)
+}
+
+
+.contenedor-campos{
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+
+.icon-table{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--secundario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg.iconn{
+    height:3rem;
+    width: 3rem;
+    border-radius: 50%;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    text-transform: uppercase;
+    
+}
+
+div.campoo{
+    width: 10%;
+    text-align: center;
+    border-radius: 1rem;
+
+
+}
+.contenedor.mensaje-completo {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.campoDetalle {
+    margin-bottom: 20px;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.campoDetalle strong {
+    display: inline-block;
+    width: 150px;
+    te
+}
+.campoDetalle span {
+    flex: 1;
+    text-align: center;
+    
+}
+.btn-regresar {
+    text-align: center;
+    margin-top: 30px;
+}
+.btn-regresar a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.btn-regresar a:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.contenedor.listado {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.fila.cabecera {
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+}
+
+.campoCabecera, .campoo {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+}
+
+.btn-accion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-link {
+    margin: 5px 0;
+}
+
+svg.iconn {
+    display: block;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #d3ecf8, #6ba8ea);
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.contenedor.listado {
+    width: 90%;
+    margin: 20px auto;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.fila.cabecera {
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+    background: #b3e5fc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.campoCabecera, .campoo {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    background: #fff;
+}
+
+.btn-accion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-link {
+    margin: 5px 0;
+}
+
+.iconn {
+    display: block;
+    margin: 0 auto;
+}
+
+.fila.par {
+    background: #e0f7fa;
+}
+
+.fila.impar {
+    background: #b2ebf2;
 }

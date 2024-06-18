@@ -6,7 +6,8 @@
         <div class="contenido-hero">
             <h2>formación onnline a tu ritmo y fácil</h2>
             <p>aprende desde casa comodamente.</p>
-            <a class="boton" href="tutoriales.html">Tutoriales</a>
+            <a class="boton" href="tutoriales.php">Tutoriales</a>
+            
         </div>
     </section>
     <main class="contenedor sombra">

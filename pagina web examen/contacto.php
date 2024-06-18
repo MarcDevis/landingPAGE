@@ -18,7 +18,7 @@
             <form class="formulario" action="create_contact.php" method="POST">
                 <fieldset>
                     <legend>Contáctame enviando tus datos</legend>
-                    <div class=".contenedor-campos">
+                    <div class="contenedor-campos">
                         <div class="campo">
                             </div>
                                 <label for="Nombre">Nombre</label>
@@ -52,6 +52,7 @@
             </form>
         </section>
 </main>
+
 <?php
         include 'footer.php';
     ?>
